@@ -7,9 +7,9 @@ README = (Path(__file__).parent / "README.md").read_text()
 
 # https://setuptools.readthedocs.io/en/latest/setuptools.html#basic-use
 setup(
-    name="package",
+    name="quick-xinput",
     version="0.1.0",
-    description="Short description of the project",
+    description="Quick selector to enable/disable/toggle input devices",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/gikeymarcia/",
