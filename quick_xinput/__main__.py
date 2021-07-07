@@ -5,7 +5,8 @@ from quick_xinput.console import console
 from typing import Callable
 
 parser = argparse.ArgumentParser(
-    description="Quickly turn on/off/toggle xinput devices."
+    prog="python -m quick_xinput",
+    description="Quickly turn on/off/toggle xinput devices.",
 )
 parser.add_argument(
     "action",
@@ -39,10 +40,11 @@ args = parser.parse_args()
 def choose_do(prompt: str, menu: Callable, action: Callable):
     sel = menu(xfuncs.xinputs(), prompt=prompt, multi=False)
     if sel is not None:
-        print(f"{sel = }")
+        # print(f"{sel = }")
         dev_id = xfuncs.get_device_id(sel[0])
-        console.log(f"{dev_id = }")
-        action(dev_id)
+        # console.log(f"{dev_id = }")
+        state = "On" if action(dev_id) else "Off"
+        console.print(f"Device {dev_id} turned {state}")
 
 
 menu = pydymenu.fzf if args.mode == "fzf" else pydymenu.rofi
