@@ -43,8 +43,7 @@ def device_state(dev_id: int) -> bool:
     props = run(["xinput", "--list-props", str(dev_id)], capture_output=True, text=True)
     for line in props.stdout.split("\n"):
         if "Enabled" in line:
-            pattern = r"^.*:.*([01]).*$"
-            if match := re.search(pattern, line):
+            if match := re.search(r"^.*:.*([01]).*$", line):
                 state = int(match.groups()[0])
                 return False if state == 0 else True
     else:
@@ -58,8 +57,6 @@ def toggle_device(dev_id: int) -> bool:
     True = Enabled
     False = Disabled
     """
-    if device_state(dev_id):
-        disable_device(dev_id)
-    else:
-        enable_device(dev_id)
+    toggle = disable_device if device_state(dev_id) == True else enable_device
+    toggle(dev_id)
     return device_state(dev_id)

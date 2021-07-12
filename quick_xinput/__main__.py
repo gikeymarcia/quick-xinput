@@ -40,10 +40,10 @@ args = parser.parse_args()
 def choose_do(prompt: str, menu: Callable, action: Callable):
     sel = menu(xfuncs.xinputs(), prompt=prompt, multi=False)
     if sel is not None:
-        # print(f"{sel = }")
+        # console.log(f"{sel = }")
         dev_id = xfuncs.get_device_id(sel[0])
         # console.log(f"{dev_id = }")
-        state = "On" if action(dev_id) else "Off"
+        state = "On" if action(dev_id) == True else "Off"
         console.print(f"Device {dev_id} turned {state}")
 
 
