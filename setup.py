@@ -9,13 +9,13 @@ README = (Path(__file__).parent / "README.md").read_text()
 setup(
     name="quick-xinput",
     version="0.1.0",
-    description="Quick selector to enable/disable/toggle input devices",
+    description="Quick selector to enable/disable/toggle xinput devices",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/gikeymarcia/",
+    url="https://github.com/gikeymarcia/quick-xinput",
     author="Mikey Garcia",
     author_email="gikeymarcia@gmail.com",
-    license="GPL-3.0-or-later",
+    license="GPL-3.0",
     packages=find_packages(exclude="test"),
     install_requires=[],
 )
