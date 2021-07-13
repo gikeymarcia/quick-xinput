@@ -1,8 +1,8 @@
 # Quick Xinput
 
-Does it drive you mad when you're living that keyboard-driven lifestyle in the 
-terminal and your wrist grazes the touchpad and send you off into a different 
-window or desktop?
+Does it drive you mad when you're living that keyboard-driven terminal lifestyle 
+and your wrist grazes the touchpad sending you off to a different window or 
+desktop?
 
 If so, `quick_xinput` is the Python module you need in your life. Bring up a 
 quick selector in the terminal, `fzf`, or with a GUI, `rofi` and select an 
