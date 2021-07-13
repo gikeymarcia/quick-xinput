@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument(
     "action",
-    help="are you enabling or disabling devices? (default: off)",
+    help="are you enabling or disabling devices? (default: toggle)",
     choices=["on", "off", "toggle"],
     nargs="?",
     default="off",
@@ -40,10 +40,8 @@ args = parser.parse_args()
 def choose_do(prompt: str, menu: Callable, action: Callable):
     sel = menu(xfuncs.xinputs(), prompt=prompt, multi=False)
     if sel is not None:
-        # console.log(f"{sel = }")
         dev_id = xfuncs.get_device_id(sel[0])
-        # console.log(f"{dev_id = }")
-        state = "On" if action(dev_id) == True else "Off"
+        state = "On" if action(dev_id) is True else "Off"
         console.print(f"Device {dev_id} turned {state}")
 
 
