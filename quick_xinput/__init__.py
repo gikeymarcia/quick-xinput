@@ -15,4 +15,4 @@ __all__ = [
     "enable_device",
     "toggle_device",
 ]
-__version__ = "0.1.1"
+__version__ = "0.1.2"
