@@ -18,3 +18,13 @@ python -m quick_xinput --rofi
 # disable a device with rofi (good for keybindings)
 python -m quick_xinput off --rofi
 ```
+
+### Source of Truth
+
+This project is available on [github][] and [gitlab][]. Each push to `master` 
+automatically goes to both so choose whichever platform you prefer.
+
+[github]: <https://gitlab.com/gikeymarcia/quick-xinput>
+"Follow and Contribute on GitHub"
+[gitlab]: <https://gitlab.com/gikeymarcia/quick-xinput>
+"Follow and Contribute on GitLab"
