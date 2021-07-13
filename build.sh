@@ -16,5 +16,8 @@ tar tzf dist/*tar.gz
 # check redner on PyPi
 twine check dist/*
 
+# upload to test.pypi.org
+# twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
 # to upload to PyPi
 # twine upload dist/*
