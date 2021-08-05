@@ -1,10 +1,11 @@
 import re
 from subprocess import run
+from typing import List
 
 # from quick_xinput.console import console
 
 
-def xinputs() -> list:
+def xinputs() -> List[str]:
     xinput = run(["xinput", "list"], capture_output=True, text=True)
     if xinput.returncode == 0:
         lines = xinput.stdout.strip().split("\n")

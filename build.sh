@@ -13,7 +13,7 @@ python ./setup.py sdist bdist_wheel
 # display tar contents
 tar tzf dist/*tar.gz
 
-# check redner on PyPi
+# check render on PyPi
 twine check dist/*
 
 # upload to test.pypi.org
