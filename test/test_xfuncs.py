@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
+# Mikey Garcia, @gikeymarcia
+# https://github.com/gikeymarcia/quick-xinput
+
 import pytest
 
 import quick_xinput
 from quick_xinput import *
-from quick_xinput.console import console
-
-# from quick_xinput.console import console
 
 
 def test_get_xinput_list():

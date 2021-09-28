@@ -1,8 +1,14 @@
-import pydymenu
+#!/usr/bin/env python3
+# Mikey Garcia, @gikeymarcia
+# https://github.com/gikeymarcia/quick-xinput
+
 import argparse
-import quick_xinput.xfuncs as xfuncs
-from quick_xinput.console import console
 from typing import Callable
+
+import pydymenu
+
+from quick_xinput.console import console
+import quick_xinput.xfuncs as xfuncs
 
 parser = argparse.ArgumentParser(
     prog="python -m quick_xinput",
@@ -34,10 +40,16 @@ group.add_argument(
 )
 parser.set_defaults(mode="fzf", action="toggle")
 args = parser.parse_args()
-# console.log(args)
 
 
 def choose_do(prompt: str, menu: Callable, action: Callable):
+    """
+    Wrap up the logic of executing the selected action.
+
+    Prompt is the question.
+    menu is either pydymenu.fzf or pydymenu.rofi
+    action is a function that changes device state (on/off/toggle)
+    """
     sel = menu(xfuncs.xinputs(), prompt=prompt, multi=False)
     if sel is not None:
         dev_id = xfuncs.get_device_id(sel[0])
@@ -52,3 +64,4 @@ elif args.action == "on":
     choose_do("Which device to turn ON? ", menu, xfuncs.enable_device)
 elif args.action == "off":
     choose_do("Which device to turn OFF? ", menu, xfuncs.disable_device)
+# vim: foldlevel=0:

@@ -1,15 +1,16 @@
+#!/usr/bin/env python3
+# Mikey Garcia, @gikeymarcia
+# https://github.com/gikeymarcia/quick-xinput
+
 import re
 from subprocess import run
 from typing import List
-
-# from quick_xinput.console import console
 
 
 def xinputs() -> List[str]:
     xinput = run(["xinput", "list"], capture_output=True, text=True)
     if xinput.returncode == 0:
-        lines = xinput.stdout.strip().split("\n")
-        return lines
+        return xinput.stdout.strip().split("\n")
     else:
         raise OSError
 

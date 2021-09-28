@@ -15,3 +15,5 @@ bump2version
 
 # publishing packages
 twine
+
+# vim: syntax=requirements:
